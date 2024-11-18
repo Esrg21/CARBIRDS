@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native'; // Importa useNavigation
+import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
-    const navigation = useNavigation(); // Obtén el objeto de navegación
+    const navigation = useNavigation();
 
     return (
         <View style={styles.container}>
@@ -32,7 +32,10 @@ const Login = () => {
                     secureTextEntry
                     style={styles.input}
                 />
-                <TouchableOpacity style={styles.loginButton}>
+                <TouchableOpacity
+                    style={styles.loginButton}
+                    onPress={() => navigation.navigate('Home')} // Navega al Home
+                >
                     <Text style={styles.loginButtonText}>Iniciar Sesión</Text>
                 </TouchableOpacity>
             </View>
@@ -74,7 +77,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     logo: {
-        width: 150, // Logo más grande
+        width: 150,
         height: 150,
         marginBottom: 10,
     },
@@ -84,7 +87,7 @@ const styles = StyleSheet.create({
         color: '#333',
     },
     form: {
-        marginTop: 20, // Ajustar campos más arriba
+        marginTop: 20,
         paddingHorizontal: 20,
     },
     input: {
@@ -97,9 +100,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
     },
     loginButton: {
-        backgroundColor: '#FF0000', // Botón rojo
+        backgroundColor: '#FF0000',
         paddingVertical: 15,
-        paddingHorizontal: 0, // Ajusta el ancho del botón
         borderRadius: 50,
         alignItems: 'center',
         marginBottom: 10,
@@ -114,27 +116,26 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     createAccountButton: {
-        color: '#fff',  // Color del texto en blanco
+        color: '#fff',
         fontSize: 16,
         marginVertical: 10,
         fontWeight: 'bold',
-        backgroundColor: '#FF0000',  // Fondo rojo para el botón
-        borderRadius: 20,  // Redondea las esquinas
-        paddingVertical: 5,  // Espaciado vertical para que el texto no esté pegado a los bordes
-        paddingHorizontal: 20,  // Espaciado horizontal para que el texto no esté pegado a los bordes
-        textAlign: 'center',  // Centra el texto dentro del botón
-        width: 'auto',  // El ancho será automático según el tamaño del texto
-        alignSelf: 'center',  // Centra el botón horizontalmente
+        backgroundColor: '#FF0000',
+        borderRadius: 20,
+        paddingVertical: 5,
+        paddingHorizontal: 20,
+        textAlign: 'center',
+        alignSelf: 'center',
     },
     forgotPassword: {
-        color: '#007AFF',  // Color azul
+        color: '#007AFF',
         fontSize: 16,
         fontWeight: 'bold',
-        textDecorationLine: 'underline',  // Subrayado
+        textDecorationLine: 'underline',
     },
     footer: {
         backgroundColor: '#007AFF',
-        height: 50, // Ajusta la altura de la línea azul inferior
+        height: 50,
         position: 'absolute',
         bottom: 0,
         left: 0,

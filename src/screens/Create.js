@@ -1,16 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather'; // Importa el ícono de la flecha
+import Icon from 'react-native-vector-icons/Feather'; 
 
 const CreateAccount = ({ navigation }) => {
     const handleBackToLogin = () => {
-        // Navegar a la pantalla de login
+       
         navigation.goBack();
     };
 
     return (
         <View style={styles.container}>
-            {/* Flecha para volver al login */}
+            
             <View style={styles.header}>
                 <TouchableOpacity onPress={handleBackToLogin} style={styles.backButton}>
                     <Icon name="arrow-left" size={24} color="#fff" />
@@ -18,15 +18,15 @@ const CreateAccount = ({ navigation }) => {
                 <Text style={styles.headerText}>Crear Cuenta</Text>
             </View>
 
-            {/* Logo al final */}
+           
             <View style={styles.logoContainer}>
                 <Image
-                    source={require('./img/Logo1.jpeg')} // Cambia por la URL o archivo de tu logo
+                    source={require('./img/Logo1.jpeg')} 
                     style={styles.logo}
                 />
             </View>
 
-            {/* Campos de formulario */}
+            
             <View style={styles.form}>
                 <TextInput
                     placeholder="Nombre(s)"
